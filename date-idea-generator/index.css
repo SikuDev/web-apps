@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Mali:wght@200;300;400;500;700&display=swap');
+
+@font-face {
+  font-family: 'Icons';
+  src: url('./icons.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  font-size: 10px;
+  font-family: "Tahoma", sans-serif;
+}
+
+h1 {
+  font-family: 'Handlee';
+  font-size: 3rem;
+  font-weight: normal;
+  color: hsl(281, 100%, 99%);
+}
+
+h2 {
+  font-size: 3rem;
+  font-family: 'Handlee';
+  padding: 0;
+  margin: 0;
+  line-height: 3rem;
+}
+
+p {
+  color: hsl(270, 30%, 50%);
+  font-size: 2rem;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 0.5rem;
+  font-family: 'Mali';
+  color: hsl(281, 100%, 95%);
+}
+
+*::-webkit-scrollbar { 
+  width: 0 !important 
+}
+
+html {
+  scrollbar-width: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  min-height: 100vh;
+  background: darkslateblue;
+  overflow: hidden;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.grid-center{
+  display: grid;
+  margin: 0 auto;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+}
+
+.header {
+  padding:  2rem 2rem 1.5rem;
+  max-height: 6.5rem;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0.25rem 0.5rem 0 hsla(0, 0%, 0%, 0.5);
+  background: slateblue;
+  border-radius: 0 0 0.5rem 0.5rem;
+  position: relative;
+  z-index: 5;
+}
+
+.wrapper {
+  padding-top: 1rem;
+  display: flex;
+  height: min-content;
+  max-height: calc(100vh - 6.5rem - 10rem);
+  flex-wrap: wrap;
+  border-radius: 0;
+  justify-content: center;
+  overflow-y: scroll;
+  z-index: 1;
+}
+
+.wrapper-bottom {
+  display: grid;
+  padding: 2rem;
+  width: 100%;
+  height: 10rem;
+  background-color: slateblue;
+  box-shadow: 0 -0.25rem 0.5rem 0 #00000080;
+  border-radius: 1rem 1rem 0 0;
+  align-self: flex-end;
+  position: relative;
+  z-index: 5;
+}
+
+.card-wrapper{
+  margin: 1rem;
+  width: 100%;
+  max-width: 35rem;
+  display: flex;
+  gap: 0;
+  box-shadow: 0 0.5rem 1rem 0 hsla(0, 0%, 0%, 0.5);
+}
+
+.idea-card {
+  padding: 2rem;
+  gap: 2rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  background-color: hsl(248, 100%, 88%);
+  box-shadow: 0 0.5rem 1rem 0 hsla(0, 0%, 0%, 0.5);
+}
+
+.delete-btn {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 0;
+  position: relative;
+  z-index: 1;
+  background: hsl(334, 55%, 57%);
+  box-shadow: -0.5rem 0 0 0 hsl(334, 55%, 57%);
+  transition: width 0.1s ease-in-out;
+}
+
+.popup {
+  justify-self: center;
+  padding: 2rem 2rem 12rem;
+  display: grid;
+  place-items: center;
+  width: 96%;
+  text-align: center;
+  background-color: hsl(281, 100%, 95%);
+  color: hsl(0, 0%, 26%);
+  border-radius: 1rem 1rem 0 0;
+  transform: translateY(100%); /*TODO: transition to 0 to show */
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  box-shadow: 0 0.2rem 1rem 0.5rem hsl(0, 0%, 20%, 70%);
+}
+
+.help-wrapper {
+  display: grid;
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  background-color: darkslateblue;
+}
+
+.text-input, .text-btn {
+  padding: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  background-color: hsl(281, 100%, 95%);
+  color: hsl(270, 30%, 50%)
+}
+
+.generate-btn {
+  padding: 0.75rem 0rem 0.25rem;
+  box-shadow: 0 -0.1rem 0.5rem 0 hsl(0, 0%, 20%, 50%);
+  border-radius: 1rem;
+  background-color: hsl(252, 100%, 75%);
+  position: relative;
+  z-index: 5;
+}
+
+.sys-btn {
+  background: none;
+}
+
+.edit{
+  font-size: 0rem;
+}
+
+.icon {
+  display: inline-block;
+  font-family: 'Icons';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 2.5rem;
+  color: hsl(281, 100%, 95%);
+  padding: 0 0 0.75rem;
+}
+
+.slider {
+  accent-color: hsl(264, 84%, 69%);
+}
+
+.slider:hover {
+  accent-color: hsl(264, 84%, 69%);
+}
+
+.slider:active {
+  accent-color: hsl(264, 84%, 69%);
+}
+
+button, input[type="range"] {
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(95%) saturate(150%);
+}
+
+button:active {
+  filter: brightness(100%);
+}
