@@ -47,9 +47,6 @@ dateBtn.forEach(date => date.addEventListener("click", function () {
       promptText = this.textContent
     }
     document.getElementById(this.id).textContent = promptText
-  } else {
-    this.disabled = true
-    console.log(this.disabled)
   }
 }))
 //-----------------------
