@@ -118,12 +118,6 @@ body {
   z-index: 1;
 }
 
-@media (max-width: 640) {
-  .wrapper-bottom {
-    transform: translateY(-50%);
-  }
-}
-
 .wrapper-bottom {
   display: grid;
   padding: 2rem;
@@ -135,7 +129,7 @@ body {
   align-self: flex-end;
   position: relative;
   z-index: 5;
-  /* transform: translateY(-50%); */
+  transform: translateY(-50%);
 }
 
 .card-wrapper{
