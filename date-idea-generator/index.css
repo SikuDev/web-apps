@@ -16,7 +16,7 @@ h1 {
   font-family: 'Handlee';
   font-size: 3rem;
   font-weight: normal;
-  color: hsl(281, 100%, 99%);
+  color: hsl(281, 100%, 99%) !important;
 }
 
 h2 {
@@ -28,13 +28,13 @@ h2 {
 }
 
 p {
-  color: hsl(270, 30%, 50%);
+  color: hsl(270, 30%, 50%) !important;
   font-size: 2.5rem;
   padding-bottom: 2rem;
 }
 
 small {
-  color:hsl(270, 30%, 50%, 50%);
+  color:hsl(270, 30%, 50%, 50%) !important;
   font-size: 1.5rem;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: bold;
@@ -55,7 +55,7 @@ small {
   border: 0;
   border-radius: 0.5rem;
   font-family: 'Mali';
-  color: hsl(281, 100%, 95%);
+  color: hsl(281, 100%, 95%) !important;
 }
 
 *::-webkit-scrollbar { 
@@ -69,7 +69,7 @@ html {
 body {
   -ms-overflow-style: none;
   height: 100%;
-  background: darkslateblue;
+  background: darkslateblue !important;
   overflow: hidden;
 }
 
@@ -99,8 +99,8 @@ body {
   max-height: 6.5rem;
   display: flex;
   justify-content: space-between;
-  box-shadow: 0 0.25rem 0.5rem 0 hsla(0, 0%, 0%, 0.5);
-  background: slateblue;
+  box-shadow: 0 0.25rem 0.5rem 0 hsla(0, 0%, 0%, 0.5) !important;
+  background: slateblue !important;
   border-radius: 0 0 0.5rem 0.5rem;
   position: relative;
   z-index: 5;
@@ -123,8 +123,8 @@ body {
   padding: 2rem;
   width: 100%;
   height: 10rem;
-  background: slateblue;
-  box-shadow: 0 -0.25rem 0.5rem 0 #00000080;
+  background: slateblue !important;
+  box-shadow: 0 -0.25rem 0.5rem 0 #00000080 !important;
   border-radius: 1rem 1rem 0 0;
   align-self: flex-end;
   position: relative;
@@ -138,7 +138,7 @@ body {
   max-width: 35rem;
   display: flex;
   gap: 0;
-  box-shadow: 0 0.5rem 1rem 0 hsla(0, 0%, 0%, 0.5);
+  box-shadow: 0 0.5rem 1rem 0 hsla(0, 0%, 0%, 0.5) !important;
 }
 
 .idea-card {
@@ -147,8 +147,8 @@ body {
   width: 100%;
   position: relative;
   z-index: 2;
-  background: hsl(248, 100%, 88%);
-  box-shadow: 0 0.5rem 1rem 0 hsla(0, 0%, 0%, 0.5);
+  background: hsl(248, 100%, 88%) !important;
+  box-shadow: 0 0.5rem 1rem 0 hsla(0, 0%, 0%, 0.5) !important;
 }
 
 .slider-label {
@@ -163,8 +163,8 @@ body {
   width: 0;
   position: relative;
   z-index: 1;
-  background: hsl(334, 55%, 57%);
-  box-shadow: -0.5rem 0 0 0 hsl(334, 55%, 57%);
+  background: hsl(334, 55%, 57%) !important;
+  box-shadow: -0.5rem 0 0 0 hsl(334, 55%, 57%) !important;
   transition: width 0.1s ease-in-out;
 }
 
@@ -175,15 +175,15 @@ body {
   place-items: center;
   width: 96%;
   text-align: center;
-  color: hsl(270, 30%, 50%);
-  background: hsl(281, 100%, 95%);
+  color: hsl(270, 30%, 50%) !important;
+  background: hsl(281, 100%, 95%) !important;
   border-radius: 1rem 1rem 0 0;
   transform: translateY(100%); /*TODO: transition to 0 to show */
   position: absolute;
   justify-self: center;
   bottom: 0;
   z-index: 3;
-  box-shadow: 0 0.2rem 1rem 0.5rem hsl(0, 0%, 20%, 70%);
+  box-shadow: 0 0.2rem 1rem 0.5rem hsl(0, 0%, 20%, 70%) !important;
   transition: transform 0.2s ease-in-out;
 }
 
@@ -201,22 +201,22 @@ body {
   position: absolute;
   z-index: 4;
   top: 0;
-  background: darkslateblue;
+  background: darkslateblue !important;
 }
 
 .text-input, .text-btn {
   padding: 1rem;
   font-size: 2rem;
   text-align: center;
-  background: hsl(281, 100%, 95%);
-  color: hsl(270, 30%, 50%)
+  background: hsl(281, 100%, 95%) !important;
+  color: hsl(270, 30%, 50%) !important
 }
 
 .main-btn {
   padding: 0.75rem 0rem 0.25rem;
-  box-shadow: 0 -0.1rem 0.5rem 0 hsl(0, 0%, 20%, 50%);
+  box-shadow: 0 -0.1rem 0.5rem 0 hsl(0, 0%, 20%, 50%) !important;
   border-radius: 1rem;
-  background: hsl(252, 100%, 75%);
+  background: hsl(252, 100%, 75%) !important;
   position: relative;
   z-index: 6;
   transition: background-color 0.2s ease-in-out;
@@ -239,20 +239,20 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 2.5rem;
-  color: hsl(281, 100%, 95%);
+  color: hsl(281, 100%, 95%) !important;
   padding: 0 0 0.75rem;
 }
 
 .slider {
-  accent-color: hsl(264, 84%, 69%);
+  accent-color: hsl(264, 84%, 69%) !important;
 }
 
 .slider:hover {
-  accent-color: hsl(264, 84%, 69%);
+  accent-color: hsl(264, 84%, 69%) !important;
 }
 
 .slider:active {
-  accent-color: hsl(264, 84%, 69%);
+  accent-color: hsl(264, 84%, 69%) !important;
 }
 
 button, input[type="range"] {
