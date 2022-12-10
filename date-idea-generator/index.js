@@ -67,6 +67,7 @@ function renderInitalCards(array) {
     <div class="card-wrapper flex-center">
       <div class="idea-card grid-center">
         <button class="text-btn" id="idea-btn${array.indexOf(card)}">${card.idea}</button>
+        <div class="slider-label"><p class="dots">.&nbsp;&nbsp;</p><p class="dots">..</p><p class="dots">...</p></div>
         <input class="slider" type="range" name="chance" min="1" max="3" step="1">
       </div>
       <button class="delete-btn"></button>

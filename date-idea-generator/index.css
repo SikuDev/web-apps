@@ -41,6 +41,14 @@ small {
   margin-bottom: 2rem;
 }
 
+.dots {
+  margin-bottom: 0.75rem;
+  padding: 0;
+  line-height: 0rem;
+  text-align: center;
+  letter-spacing: 0.25rem;
+}
+
 *, *::before, *::after {
   margin: 0;
   box-sizing: border-box;
@@ -135,12 +143,17 @@ body {
 
 .idea-card {
   padding: 2rem;
-  gap: 2rem;
+  gap: 1rem;
   width: 100%;
   position: relative;
   z-index: 2;
   background: hsl(248, 100%, 88%);
   box-shadow: 0 0.5rem 1rem 0 hsla(0, 0%, 0%, 0.5);
+}
+
+.slider-label {
+  display: flex;
+  justify-content: space-between;
 }
 
 .delete-btn {
