@@ -115,11 +115,13 @@ function generateIdea() {
 function renderIdea(el, idea) {
   let text = el.lastElementChild
 
-  el.style.transform = "translateY(100%)"
+  el.style.height = "0"
+  // el.style.transform = "translateY(0%)"
 
   setTimeout(() => {
     text.textContent = idea
-    el.style.transform = "translateY(0)"
+    el.style.height = "min-content"
+    el.style.transform = "translateY(-50%)"
   }, parseFloat(getComputedStyle(el).transitionDuration) * 1000);
 
   window.addEventListener('click', function (e) {
