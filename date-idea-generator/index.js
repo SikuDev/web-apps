@@ -1,9 +1,10 @@
 //* Initalize values
 //-----------------------
+// https://localadventurer.com/alphabet-dating-fun-date-ideas-from-a-z/
 // Constants
-const initialArray = ["Cinema", "Dinner", "Walk", "Beach", "Play", "Kinky time", "Jog"]
-const ideasArray = []
+const initialArray = ["Beach","Brewery Tour","Broadway","Choose Your Own Adventure","Comedy Club","Crabbing","Day Tripping","DIY Project","Drive-in Theater","Escape Rooms","Eighties","Exotic Eats","Festival","Flower Fields","Food Tour","Getaway","Gondola Ride","Glamping","Hike","Hot Air Balloon","Hot Springs","Ice Cream","Ice Skating","Improv","Java","Jetski","Jigsaw Puzzle","Karaoke","Kayak","Kite Flying","Lake","Leaf Peeping","Local Adventure","Meteor Shower","Murals","Musical","National Parks","Nature","Netflix and Chill","Observatory","Ocean","Orchard","Piano Bar","Picnic","Pinterest Project","Quadruple Date","Quarters","Quartz Hunting","Quiet","Quilt","Quirky",",Quickie ;)","Quiz","Recipe","Rock Climb","RV","Salsa Dance","Stargaze","Subscription Box Dates","Tea Tasting","Travel, Tubing","U-Pick Farm","Unplugged","Upscale","Vacation","Vino","Volunteer","Walking Tour","Waterfall Hike","Whale Watching","Xbox","Xplore","Xtreme Sports","Yard Sale","Yelp a New Restaurant","Yes","Zipline","Zoo","Zzzz’s"]
 const cardsArray = []
+let ideasArray = []
 
 const cardsSxn = document.getElementById("cards-sxn")
 const editBtn = document.getElementById("edit-btn")
@@ -25,15 +26,16 @@ mainBtn.addEventListener("click", function () {
 
 // Variables
 let ideaBtn
+let chanceSlider
 let deleteBtnAll
 
 let mode = 0
 
 // Classes
 class Card {
-  constructor(idea) {
+  constructor(idea, chance) {
     this.idea = idea;
-    this.chance = 1;
+    this.chance = chance;
   }
 }
 //-----------------------
@@ -52,16 +54,11 @@ editBtn.addEventListener("click", toggleMode)
 
 //* Defining functions
 //-----------------------
-function initCards() {
-
-}
-
 function initializeCards(array) {
   array.forEach(idea => {
-    cardsArray.push(new Card(idea))
-    ideasArray.push(idea)
+    cardsArray.push(new Card(idea, 2))
+    array.pop(idea)
   });
-  console.log(ideasArray);
 }
 
 function renderInitalCards(array) {
@@ -70,17 +67,11 @@ function renderInitalCards(array) {
     <div class="card-wrapper flex-center">
       <div class="idea-card grid-center">
         <button class="text-btn" id="idea-btn${array.indexOf(card)}">${card.idea}</button>
-       <input class="slider" type="range" name="chance" min="1" max="3" step="1">
+        <input class="slider" type="range" name="chance" min="1" max="3" step="1">
       </div>
       <button class="delete-btn"></button>
     </div>
     `
-    initialArray.forEach(idea => function () {
-      if (idea == card.idea) {
-        initialArray.splice(indexOf(idea), 1)
-        console.log(initialArray);
-      }
-    })
   })
 }
 
@@ -106,32 +97,34 @@ function toggleMode() {
 }
 
 function generateIdea() {
-  let resultArray = []
-  let result = ""
-  cardsArray.forEach(card =>
-    resultArray = resultArray.concat(new Array(card.chance + 1).fill(card.idea))
-  )
-  result = resultArray[Math.floor(Math.random() * resultArray.length)]
-  resultArray = []
-  console.log(result);
-  renderIdea(popup, result)
+  chanceSlider = document.querySelectorAll(".slider")
+
+  chanceSlider.forEach(function(slider){
+    let idea = slider.parentElement.firstElementChild.textContent
+    let chance = Number(slider.value)
+    ideasArray = ideasArray.concat(new Array(chance).fill(idea))
+  })
+
+  let result = `${ideasArray[Math.floor(Math.random() * ideasArray.length)]}`
+  renderIdea(popupEl, result)
+  ideasArray = []
   return result
 }
 
 function renderIdea(el, idea) {
   let text = el.lastElementChild
-  
+
   el.style.transform = "translateY(100%)"
-  
+
   setTimeout(() => {
     text.textContent = idea
     el.style.transform = "translateY(0)"
   }, parseFloat(getComputedStyle(el).transitionDuration) * 1000);
-  
+
   window.addEventListener('click', function (e) {
     if (document.getElementById('popup').contains(e.target)) {
       navigator.clipboard.writeText(text.textContent).then(function () {
-        console.log('Async: Copying to clipboard was successful!');
+
         el.style.transform = "translateY(100%)"
       }, function (err) {
         console.error('Async: Could not copy text: ', err);
@@ -142,12 +135,14 @@ function renderIdea(el, idea) {
   });
 }
 
-function addCard(array) {
-  let card = new Card(initialArray[Math.floor(Math.random() * initialArray.length)])
+function addCard() {
+  let text = initialArray[Math.floor(Math.random() * initialArray.length)]
+  let card = new Card(text, 2)
+  
   cardsSxn.innerHTML = `
   <div class="card-wrapper flex-center">
   <div class="idea-card grid-center">
-  <button class="text-btn" id="idea-btn${cardsArray.length}">${card.idea}</button>
+  <button class="text-btn" id="idea-btn${cardsArray.length}">${text}</button>
   <input class="slider" type="range" name="chance" min="1" max="3" step="1">
   </div>
   <button class="delete-btn"></button>
@@ -156,13 +151,20 @@ function addCard(array) {
   cardsSxn.firstElementChild.lastElementChild.style.width = "6rem"
   resetBtns()
   cardsSxn.scrollTo({ top: 0, behavior: 'smooth' });
+  console.log(ideasArray);
 }
 
 function resetBtns() {
   deleteBtnAll = document.querySelectorAll(".delete-btn")
   // Attach delete button function
   deleteBtnAll.forEach(btn => btn.addEventListener("click", function () {
+    // let text = this.parentElement.firstElementChild.firstElementChild.textContent
+    // console.log(text)
+    // if (text.length > 1){
+    //   ideasArray.push(text)
+    // }
     this.parentElement.remove()
+    console.log(ideasArray)
   }))
   // Idea name button
   ideaBtn = document.querySelectorAll(".text-btn")
