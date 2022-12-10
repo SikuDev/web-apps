@@ -29,7 +29,16 @@ h2 {
 
 p {
   color: hsl(270, 30%, 50%);
-  font-size: 2rem;
+  font-size: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+small {
+  color:hsl(270, 30%, 50%, 50%);
+  font-size: 1.5rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  margin-bottom: 2rem;
 }
 
 *, *::before, *::after {
@@ -106,7 +115,7 @@ body {
   padding: 2rem;
   width: 100%;
   height: 10rem;
-  background-color: slateblue;
+  background: slateblue;
   box-shadow: 0 -0.25rem 0.5rem 0 #00000080;
   border-radius: 1rem 1rem 0 0;
   align-self: flex-end;
@@ -129,7 +138,7 @@ body {
   width: 100%;
   position: relative;
   z-index: 2;
-  background-color: hsl(248, 100%, 88%);
+  background: hsl(248, 100%, 88%);
   box-shadow: 0 0.5rem 1rem 0 hsla(0, 0%, 0%, 0.5);
 }
 
@@ -146,20 +155,29 @@ body {
 }
 
 .popup {
-  justify-self: center;
-  padding: 2rem 2rem 12rem;
+  font-size: 2.5rem;
+  padding: 1rem 2rem 12rem;
   display: grid;
   place-items: center;
   width: 96%;
   text-align: center;
-  background-color: hsl(281, 100%, 95%);
-  color: hsl(0, 0%, 26%);
+  color: hsl(270, 30%, 50%);
+  background: hsl(281, 100%, 95%);
   border-radius: 1rem 1rem 0 0;
   transform: translateY(100%); /*TODO: transition to 0 to show */
   position: absolute;
+  justify-self: center;
   bottom: 0;
-  z-index: 10;
+  z-index: 3;
   box-shadow: 0 0.2rem 1rem 0.5rem hsl(0, 0%, 20%, 70%);
+  transition: transform 0.2s ease-in-out;
+}
+
+.popup:hover {
+  filter: saturate(130%)
+}
+.popup:active {
+  filter: saturate(100%)
 }
 
 .help-wrapper {
@@ -169,24 +187,25 @@ body {
   position: absolute;
   z-index: 4;
   top: 0;
-  background-color: darkslateblue;
+  background: darkslateblue;
 }
 
 .text-input, .text-btn {
   padding: 1rem;
   font-size: 2rem;
   text-align: center;
-  background-color: hsl(281, 100%, 95%);
+  background: hsl(281, 100%, 95%);
   color: hsl(270, 30%, 50%)
 }
 
-.generate-btn {
+.main-btn {
   padding: 0.75rem 0rem 0.25rem;
   box-shadow: 0 -0.1rem 0.5rem 0 hsl(0, 0%, 20%, 50%);
   border-radius: 1rem;
-  background-color: hsl(252, 100%, 75%);
+  background: hsl(252, 100%, 75%);
   position: relative;
-  z-index: 5;
+  z-index: 6;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .sys-btn {
