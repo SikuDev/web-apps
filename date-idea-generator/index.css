@@ -68,7 +68,7 @@ html {
 
 body {
   -ms-overflow-style: none;
-  height: 100%;
+  /* height: 100%; */
   background: darkslateblue;
   overflow: hidden;
 }
@@ -89,14 +89,14 @@ body {
 }
 
 .container {
-  /* height: 100vh; */
   display: grid;
-  grid-template-rows: min-content 1fr min-content;
+  grid-template-rows: auto 1fr auto;
+  max-height:  100vh;
 }
 
 .header {
   padding:  2rem 2rem 1.5rem;
-  max-height: 6.5rem;
+  /* max-height: 6.5rem; */
   display: flex;
   justify-content: space-between;
   box-shadow: 0 0.25rem 0.5rem 0 hsla(0, 0%, 0%, 0.5);
@@ -107,10 +107,10 @@ body {
 }
 
 .wrapper {
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
   display: flex;
-  height: min-content;
-  max-height: calc(100vh - 6.5rem - 10rem);
+  /* height: min-content; */
+  /* max-height: min-content; */
   flex-wrap: wrap;
   border-radius: 0;
   justify-content: center;
@@ -122,14 +122,14 @@ body {
   display: grid;
   padding: 2rem;
   width: 100%;
-  height: 10rem;
+  /* height: 10rem; */
   background: slateblue;
   box-shadow: 0 -0.25rem 0.5rem 0 #00000080;
   border-radius: 1rem 1rem 0 0;
   align-self: flex-end;
   position: relative;
   z-index: 5;
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
 }
 
 .card-wrapper{
@@ -197,7 +197,7 @@ body {
 .help-wrapper {
   display: grid;
   width: 100vw;
-  height: 100%;
+  /* height: 100%; */
   position: absolute;
   z-index: 4;
   top: 0;

@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Mali:wght@200;300;400;500;700&display=swap');
+
+@font-face {
+    font-family: 'Icons';
+    src: url('./icons.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    font-size: 10px;
+    font-family: "Tahoma", sans-serif;
+}
+
+h1 {
+    font-family: 'Handlee';
+    font-size: 3rem;
+    font-weight: normal;
+    color: hsl(281, 100%, 99%);
+    line-height: 3rem;
+}
+
+h2 {
+    font-size: 3rem;
+    font-family: 'Handlee';
+    padding-top: 0.5rem;
+    /* margin: 0; */
+    line-height: 3rem;
+}
+
+p {
+    color: hsl(270, 30%, 50%);
+    font-size: 2.5rem;
+}
+
+small {
+    color: hsl(270, 30%, 50%, 50%);
+    font-size: 1.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.dots {
+    line-height: 0rem;
+    text-align: center;
+    letter-spacing: 0.25rem;
+    padding-left: 0.25rem;
+    position: relative;
+    top: -0.25rem;
+    opacity: 50%;
+}
+
+.icon {
+    display: inline-block;
+    font-family: 'Icons';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 3rem;
+    color: hsl(281, 100%, 95%);
+    padding: 0 0 0.75rem;
+  }
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    box-sizing: border-box;
+    border: 0;
+    font-family: 'Mali';
+    color: hsl(281, 100%, 95%);
+}
+
+*::-webkit-scrollbar {
+    width: 0 !important
+}
+
+html {
+    height: 100%;
+    scrollbar-width: none;
+}
+
+body {
+    height: 100%;
+    -ms-overflow-style: none;
+    overflow: hidden;
+    background: darkslateblue;
+}
+
+header {
+    width: 100%;
+    max-height: 8rem;
+    position: sticky;
+    z-index: 4;
+    top: 0;
+    padding: 2rem 2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0.25rem 0.5rem 0 hsla(0, 0%, 0%, 0.5);
+    background: slateblue;
+}
+
+section {
+    height: calc(100% - 18rem);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    padding: 2rem;
+    width: 100%;
+    background: slateblue;
+    box-shadow: 0 -0.25rem 0.5rem 0 #00000080;
+    z-index: 4;
+}
+
+.logo {
+    display: flex;
+    gap: 1rem;
+}
+
+.card {
+    margin: 1rem;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 35rem;
+    height: min-content;
+    display: flex;
+    background: hsl(248, 100%, 88%);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem 0 hsla(0, 0%, 0%, 0.5);
+    overflow: hidden;
+}
+
+.face {
+    display: grid;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 2rem;
+    box-shadow: 0 0.5rem 1rem 0 hsla(0, 0%, 0%, 0.5);
+    position: relative;
+    z-index: 2;
+}
+
+.text-btn {
+    padding: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    background: hsl(281, 100%, 95%);
+    color: hsl(270, 30%, 50%);
+    border-radius: 0.5rem;
+}
+
+.delete-btn {
+    padding: 0;
+    width: 6rem;
+    position: relative;
+    z-index: 1;
+    background: hsl(334, 55%, 57%);
+    transition: width 0.1s ease-in-out;
+}
+
+.main-btn {
+    width: 100%;
+    padding: 2rem 0rem 1.5rem;
+    box-shadow: 0 -0.1rem 0.5rem 0 hsl(0, 0%, 20%, 50%);
+    border-radius: 1rem;
+    background: hsl(252, 100%, 75%);
+    position: relative;
+    z-index: 6;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.slider-label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider {
+    accent-color: hsl(264, 84%, 69%);
+}
+
+.slider:hover {
+    accent-color: hsl(264, 84%, 69%);
+}
+
+.slider:active {
+    accent-color: hsl(264, 84%, 69%);
+}
+
+.sys-btn {
+    background: none;
+}
+
+button,
+input[type="range"] {
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(95%) saturate(150%);
+}
+
+button:active {
+    filter: brightness(100%);
+}
