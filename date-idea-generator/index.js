@@ -142,7 +142,7 @@ function addCard() {
   let text = initialArray[Math.floor(Math.random() * initialArray.length)]
   let card = new Card(text, 2)
   
-  // cardsSxn.innerHTML = `
+  cardsSxn.innerHTML = `
   <div class="card-wrapper flex-center">
   <div class="idea-card grid-center">
   <button class="text-btn" id="idea-btn${cardsArray.length}">${text}</button>
