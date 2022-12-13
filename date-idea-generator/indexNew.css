@@ -162,7 +162,7 @@ footer {
 
 .delete-btn {
     padding: 0;
-    width: 6rem;
+    width: 0rem;
     position: relative;
     z-index: 1;
     background: hsl(334, 55%, 57%);
